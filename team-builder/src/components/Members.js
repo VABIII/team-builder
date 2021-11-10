@@ -1,13 +1,17 @@
 import React from "react";
-
+import Member from "./Member";
 
 export default function Members(props) {
-    const {} = props;
+    const { membersList } = props;
 
 
     return (
         <div>
-            Hi!
+            {
+                membersList.map((member, i) => {
+                    return <Member member={member}/>
+                })
+            }
         </div>
     )
 
