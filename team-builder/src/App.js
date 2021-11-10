@@ -49,7 +49,6 @@ function App() {
 
     const onClick = () => {
         !isToggled ? setIsToggled(true) : setIsToggled(false)
-        console.log(isToggled);
     }
 
   return (

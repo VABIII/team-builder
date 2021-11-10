@@ -15,7 +15,6 @@ export default function MemberForm(props) {
         submit();
     }
 
-
     return(
         <div>
             <form className="member-form" onSubmit={onSubmit}>
@@ -35,7 +34,7 @@ export default function MemberForm(props) {
                         onChange={onChange}
                     />
                 </label>
-                <label name="role">Role:&nbsp;
+                <label>&nbsp;Role:&nbsp;
                     <select name="role" value={values.role} onChange={onChange}>
                         <option value="">---Select a Role---</option>
                     <option value="Collector">Collector</option>
@@ -44,7 +43,6 @@ export default function MemberForm(props) {
                     <option value="Artist">Artist</option>
                     </select>
                 </label>
-                {/*<input type="submit">Submit</input>*/}
                 <br/>
                 <br/>
                 <button disabled={!values.name || !values.email || !values.role}>Submit</button>

@@ -4,7 +4,6 @@ import Member from "./Member";
 export default function Members(props) {
     const { membersList } = props;
 
-
     return (
         <div>
             {
