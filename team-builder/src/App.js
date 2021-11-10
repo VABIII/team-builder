@@ -6,7 +6,7 @@ import './App.css';
 const initialValues = []
 console.log(initialValues);
 
-const inititalFormValues = {
+const initialFormValues = {
     name: "",
     email: "",
     role: ""
@@ -15,11 +15,12 @@ const inititalFormValues = {
 
 function App() {
     const [membersList, setMembersList] = useState(initialValues);
-    const [formValues, setFormValues] = useState(inititalFormValues);
+    const [formValues, setFormValues] = useState(initialFormValues);
     console.log(formValues)
+    console.log(membersList)
 
     const updateForm = (inputName, inputValue) => {
-        console.log(inputValue);
+        // console.log(inputValue);
         setFormValues({...formValues, [inputName]: inputValue})
 
     }
@@ -30,12 +31,14 @@ function App() {
             email: formValues.email,
             role: formValues.role
         }
+        setMembersList([newMember, ...membersList]);
+        setFormValues(initialFormValues);
     }
 
   return (
     <div className="App">
       <header className="App-header">
-        <MemberForm values={formValues} update={updateForm} onSubmit={onSubmit}/>
+        <MemberForm values={formValues} update={updateForm} submit={submitForm}/>
       </header>
     </div>
   );

@@ -2,12 +2,17 @@ import React from "react";
 
 
 export default function MemberForm(props) {
-    const {onSubmit, update, values} = props
+    const {submit, update, values} = props
 
     const onChange = evt => {
         const name=evt.target.name;
         const { value } = evt.target;
         update(name,value);
+    }
+
+    const onSubmit = evt => {
+        evt.preventDefault();
+        submit();
     }
 
 
@@ -41,7 +46,7 @@ export default function MemberForm(props) {
                 {/*<input type="submit">Submit</input>*/}
                 <br/>
                 <br/>
-                <button>Submit</button>
+                <button disabled={!values.name || !values.email || !values.role}>Submit</button>
             </form>
         </div>
     )
